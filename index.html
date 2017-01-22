@@ -39,7 +39,7 @@
             <div class="slides">
 
                 <section>
-                    <h2><a href="http://www.reportlab.com/opensource/">Reportlab</a></h2>
+                    <h2><a href="http://www.reportlab.com/opensource/"><img height="90" style="vertical-align: middle;border:none;box-shadow:none;background:none" data-src="http://www.reportlab.com/static/cms/img/logo_bg.gif" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);"></a></h2>
                     <h4>"Introduction"</h4>
                     <p class="fragment">
                         <small>About me <a href="http://monobotsoft.es">Héctor Alvarez</a> / <a href="https://twitter.com/monobotblog">@monobotblog</a> / <a href="mailto:monobot.soft@gmail.com">monobot.soft@gmail.com</a></small>
@@ -47,10 +47,68 @@
                 </section>
 
                 <section>
-                    <h3>
-                        <img height="90" style="vertical-align: middle" data-src="http://www.reportlab.com/static/cms/img/logo_bg.gif" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-                        Reportlab
-                    </h3>
+                    <h3>Reportlab</h3>
+                    <p>Reportlab is a PDF generating suite.</p>
+                    <p>It's important to point out that it has an opensource part (where we are focusing) and a privative part that is intended for higher performance and has support included'</p>
+                </section>
+
+                <section>
+                    <h3>Installation</h3>
+                    <ul>
+                        <div class="fragment">
+                            <p>Directly with <a href="https://pypi.python.org/pypi/pip">pip</a></p>
+                            <pre><code class="hljs" data-trim contenteditable>
+$ pip install reportlab
+                            </code></pre>
+                            <p>Its recomended to install it inside virtualenv.</p>
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Self built PDF tutorial</h3>
+                    <p>Since its a PDF generating tool it has a very nice tutorial in PDF that is generated on the fly.</p>
+                    <p>You can download it from <a href="http://www.reportlab.com/docs/reportlab-userguide.pdf">here.</a></p>
+                    <p class="fragment">Those instructions are more in depth than this presentation.</p>
+                </section>
+
+                <section>
+                    <h3>How are the reportlab components?</h3>
+                    <p>A reportlab PDF document is named <b>canvas</b> that can contain a number of pages that are called <b>templates</b> and inside them can be rendered a number of items named <b>flowables</b></p>
+                </section>
+
+                <section>
+                    <h3>Canvas</h3>
+                    <p>The canvas is the space where everything happens, since its a space it has dimension and to be able to place the items it has coordinates.</p>
+                    <p>And since its the main component its where you define the PDF name that will be generated.</p>
+                </section>
+
+                <section>
+                    <h3>Template</h3>
+                    <p>The template defines where and how the different flowable can be rendered.</p>
+                    <p>To be able to locate flowables inside a template you have to define on what regions those flowables can be rendered, those regions are named <b>frames</b></p>
+                </section>
+
+                <section>
+                    <h3>Flowable</h3>
+                    <p>Anything that will be rendered is a flowable, there are many different flowables:</p>
+                    <ul>
+                        <p class="fragment">paragraphs</p>
+                        <p class="fragment">images</p>
+                        <p class="fragment">tables</p>
+                        <p class="fragment">graphics</p>
+                        <p class="fragment">charts</p>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Toolbox</h3>
+                    <p>It will be impossible to work with all the rest of the things with a good amount of tools like:</p>
+                    <ul>
+                        <p class="fragment">fonts</p>
+                        <p class="fragment">color</p>
+                        <p class="fragment">dimensions (cms, inchs, A4, letter, etc...)</p>
+                    </ul>
                 </section>
 
             </div>
