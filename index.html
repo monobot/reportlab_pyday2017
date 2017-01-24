@@ -12,7 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
         <link rel="stylesheet" href="css/reveal.css">
-        <link rel="stylesheet" href="css/theme/sky.css" id="theme">
+        <link rel="stylesheet" href="css/theme/beige.css" id="theme">
 
         <!-- Theme used for syntax highlighting of code -->
         <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -74,31 +74,90 @@ $ pip install reportlab
 
                 <section>
                     <h3>How are the reportlab components?</h3>
-                    <p>A reportlab PDF document is named <b>canvas</b> that can contain a number of pages that are called <b>templates</b> and inside them can be rendered a number of items named <b>flowables</b></p>
+                    <p>A reportlab PDF document is named <b>canvas</b> that can contain a number of pages, the <b>templates</b> and inside them can be rendered a number of items named <b>flowables</b></p>
                 </section>
 
                 <section>
-                    <h3>Canvas</h3>
-                    <p>The canvas is the space where everything happens, since its a space it has dimension and to be able to place the items it has coordinates.</p>
-                    <p>And since its the main component its where you define the PDF name that will be generated.</p>
+
+                    <section>
+                        <h3>Canvas</h3>
+                        <p>The canvas is the space where everything happens, since its a space it has dimension and to be able to place the items it has coordinates.</p>
+                        <p>And since its the main component its where you define the PDF name that will be generated.</p>
+                    </section>
+
+                    <section>
+                            <pre><code class="hljs" data-trim contenteditable>
+from reportlab.pdfgen import canvas
+
+
+def hello(c):
+    c.drawString(100, 100, "Hello World")
+
+
+c = canvas.Canvas("hello.pdf")
+hello(c)
+c.showPage()
+c.save()
+                            </code></pre>
+                    </section>
+
+                    <section>
+                        <p>canvas has a lot of different settings that are in cascade applied to the items that are placed in it</p>
+                        <ul>
+                            <p><b>setTitle</b> Title of the pdf document.</p>
+                            <p><b>setFont</b> Sets the font style and font size.</p>
+                            <p><b>setLineWidth</b> Line width of the lines or draws.</p>
+                            <p><b>setStrokeColor</b> Color of the lines and texts.</p>
+                            <p><b>setFillColor</b> If the drawins are closed defines their fill color.</p>
+                            <p><b>setDash</b> Sets the line dash style.</p>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <p>Its coordinates can be modified and rotated.</p>
+                        <ul>
+                            <p><b>translate</b> Translates the coordinate system.</p>
+                            <p><b>rotate</b> Rotates the coordinate system.</p>
+                            <p><b>saveState</b> Saves the state of the canvas (position, rotation, colores, strokes, everything), before further changes.</p>
+                            <p><b>restoreState</b> Restores previously saved state.</p>
+                        </ul>
+                    </section>
+
                 </section>
 
                 <section>
-                    <h3>Template</h3>
-                    <p>The template defines where and how the different flowable can be rendered.</p>
-                    <p>To be able to locate flowables inside a template you have to define on what regions those flowables can be rendered, those regions are named <b>frames</b></p>
+
+                    <section>
+                        <h3>Template and Frame</h3>
+                        <p>The template defines where and how the different flowable can be rendered.</p>
+                        <p>To be able to locate flowables inside a template you have to define on what regions those flowables can be rendered, those regions are named <b>frames</b></p>
+                    </section>
+
+                    <section>
+                        <img height="400" src="page frame.png">
+                    </section>
+
                 </section>
 
                 <section>
-                    <h3>Flowable</h3>
-                    <p>Anything that will be rendered is a flowable, there are many different flowables:</p>
-                    <ul>
-                        <p class="fragment">paragraphs</p>
-                        <p class="fragment">images</p>
-                        <p class="fragment">tables</p>
-                        <p class="fragment">graphics</p>
-                        <p class="fragment">charts</p>
-                    </ul>
+
+                    <section>
+                        <h3>Flowable</h3>
+                        <p>Anything that will be rendered is a flowable, there are many different flowables:</p>
+                        <ul>
+                            <p class="fragment">paragraphs</p>
+                            <p class="fragment">images</p>
+                            <p class="fragment">tables</p>
+                            <p class="fragment">graphics</p>
+                            <p class="fragment">charts</p>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>But why that name?</h3>
+                        <p>The </p>
+                    </section>
+
                 </section>
 
                 <section>
